@@ -1,6 +1,7 @@
+// CALL SCROLLTRIGGER PLUGIN
 gsap.registerPlugin(ScrollTrigger);
 
-
+// CREATE SPRITESHEET
 const spriteSheet = {
   width: 640,
   height: 480,
@@ -10,46 +11,38 @@ const spriteSheet = {
   duration: 1,
 };
 
+// CALL GSAP TIMELINE AND IMAGE SEQUENCE SCROLLTRIGGER
 const tl = gsap.timeline({
   scrollTrigger: {
     scrub: true,
     start: "top top",
-    end: '+=100%',
-  }
+    end: "+=100%",
+  },
 });
 
-tl.from(
-    ".heading", 
-    {
-        opacity: 0,
-        scale: 0.25,
-    },
-).to (
-    ".heading", 
-    {
-        opacity: 1,
-        scale: 1,
-        }
-);
+// FADEIN TITEL
+tl.from(".heading", {
+  opacity: 0,
+  scale: 0.25,
+}).to(".heading", {
+  opacity: 1,
+  scale: 1,
+});
 
+// IMAGE SEQUENCE ANIMATION
+tl.from(".container", {
+  scale: 2,
+  duration: 0.75,
+  ease: "power1.inOut",
+}).to(".container", {
+  scale: 3,
+  duration: 1,
+  autoAlpha: 0,
+  ease: "back.inOut",
+});
 
-tl.from(
-  ".container",
-  {
-    scale: 2,
-    duration: .75,
-    ease: "power1.inOut",
-  },
-).to(
-  ".container",
-  {
-    scale: 3,
-    duration: 1,
-    autoAlpha: 0,
-    ease: "back.inOut",
-  },
-);
-
+// FOR LOOP FOR IMAGE SEQUENCE.
+// this goes through the spritesheet and all the frames in it.
 for (let i = 0; i < spriteSheet.total; i++) {
   tl.set(
     ".frames",
@@ -61,31 +54,32 @@ for (let i = 0; i < spriteSheet.total; i++) {
   );
 }
 
-
-gsap.to('.heading', {
+// ANIMATION TITEL
+gsap.to(".heading", {
   scrollTrigger: {
-    trigger: '.sec-02', //this is the element that will trigger the animation
-    start: 'top top', //this string defines the trigger and scroller start
-    end: '+=180%', //this string defines the trigger and scroller end
-    scrub: true //this tells GSAP to link animation progress to scroll progress
+    trigger: ".sec-02",
+    start: "top top",
+    end: "+=180%",
+    scrub: true,
   },
   x: "185rem",
   duration: 2,
   ease: "power3.out",
   scale: 350,
   delay: 2,
-})
+});
 
-gsap.to('.static_image', {
+// ANIMATION IMAGES
+gsap.to(".static_image", {
   scrollTrigger: {
-    trigger: '.img-container', //this is the element that will trigger the animation
-    start: 'top', //this string defines the trigger and scroller start
-    end: '+=375%', //this string defines the trigger and scroller end
-    scrub: true //this tells GSAP to link animation progress to scroll progress
+    trigger: ".img-container",
+    start: "top",
+    end: "+=375%",
+    scrub: true,
   },
   scale: 0.4,
   duration: 1,
   ease: "power4.inOut",
-  transformOrigin:'top center',
+  transformOrigin: "top center",
   delay: 1,
-})
+});
