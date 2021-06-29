@@ -59,14 +59,12 @@ gsap.to(".heading", {
   scrollTrigger: {
     trigger: ".sec-02",
     start: "top top",
-    end: "+=180%",
+    end: "+=375%",
     scrub: true,
   },
   x: "185rem",
-  duration: 2,
   ease: "power3.out",
   scale: 350,
-  delay: 2,
 });
 
 // ANIMATION IMAGES

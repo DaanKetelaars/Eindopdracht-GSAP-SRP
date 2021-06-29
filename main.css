@@ -19,7 +19,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index:100;
+    z-index: 100;
 }
 
 .container img {
@@ -30,20 +30,22 @@ body {
     background: #000;
     height: 100vh;
 }
+
 .sec-02 {
-    width:100%;
+    width: 100%;
     background: #000;
     height: 300vh;
 }
+
 .sec-03 {
-    width:100%;
+    width: 100%;
     background: #C70039;
-    height: 100vh;
+    height: 250vh;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction:column;
+    flex-direction: column;
 }
 
 
@@ -53,24 +55,26 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction:column;
+    flex-direction: column;
 }
 
 .img-container img {
-    width:100%;
+    width: 100%;
     padding: 5rem;
+    =
 }
 
 .footer-content {
-    width:100%;
+    width: 100%;
     position: absolute;
     bottom: 5%;
-    z-index:100;
+    z-index: 100;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction:column;
+    flex-direction: column;
 }
+
 h2 {
     margin-bottom: 2rem;
 }
